@@ -1,0 +1,135 @@
+body {
+    background-image: url("Background.png");
+    background-size: cover;        /* fills screen */
+    background-position: center;   /* centers image */
+    background-repeat: no-repeat;
+    height: 78vh;
+    margin-bottom: 30px;
+}
+
+.LoginPanel {
+    background-color: rgb(46, 46, 46);
+    height: 350px;
+    width: 600px;
+    margin-left: 400px;
+    margin-top: 130px;
+}
+
+.Title1 {
+    color: white;
+    margin-left: 200px;
+    padding-top: 10px; /* use padding instead of margin-top */
+    font-family: 'Inter', sans-serif;
+}
+
+.required {
+    display: block;   /* 👈 THIS is the fix */
+    color: white;
+    font-size: 12px;
+    margin-top: -5px;
+    margin-left: 450px;
+    font-family: 'Inter', sans-serif;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+.email {
+    margin-left: -0px;
+    background-color: rgb(35, 35, 35);
+    height: 30px;
+    width: 490px;
+    color: white;
+    margin-top: 30px;
+    border: 100px;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-top: 39px;
+
+}
+
+.RequiredPass::after {
+    content: "   *";
+    color: red;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+
+
+.password {
+padding-left: 110px; /* was 90px */
+margin: 11px;
+margin-left: -0px;
+    height: 30px;
+    width: 380px;
+    color: white;
+    background-color: rgb(35, 35, 35);
+    border: 1px;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: left;
+
+}
+
+.form-group {
+    margin-bottom: 5px; /* controls label spacing */
+}
+
+input {
+    display: block;
+    margin-bottom: 15px; /* controls space under inputs */
+}
+
+.RequiredPass {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    margin-top: -15px;
+}
+
+.happy {
+    color: rgb(141, 141, 141);
+        font-family: 'Inter', sans-serif;
+        margin-left: 559px;
+        margin-top: -310px;
+        font-size: 20px;
+}
+
+.Forgot {
+    font-family: 'Inter', sans-serif;
+    color: rgb(40, 83, 169);
+    margin-left: 450px;
+    margin-top: 140px;
+    cursor: pointer;
+}
+
+.Login {
+    margin-left: 450px;
+    margin-top: -140px;
+    width: 490px;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgb(40, 83, 169);
+    border: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.register {
+    color: rgb(40, 83, 169);;
+    font-family: 'Inter', sans-serif;
+}
+
+.idk {
+        font-family: 'Inter', sans-serif;
+        color: rgb(141, 141, 141);
+        margin-left: 450px;
+}

